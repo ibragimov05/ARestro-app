@@ -66,12 +66,13 @@ flutter:
     - assets/icons/main_icons/
     - assets/icons/search_bar_icons/
     - assets/icons/onboarding_icons/
+    - assets/icons/onboarding_icons/password/
     - assets/icons/food_order_icons/
-    - assets/icons/food_order_icons/star
+    - assets/icons/food_order_icons/star/
     - assets/icons/tab_box_icons/
     - assets/images/main_images/
     - assets/images/dashboard_images/
-    - assets/images/dashboard_images/foods
+    - assets/images/dashboard_images/foods/
     - assets/images/viewall_images/
     - assets/images/food_order_images/
 
@@ -100,11 +101,11 @@ flutter:
           weight: 600
         - asset: assets/fonts/manrope/Manrope-ExtraLight.ttf
           style: italic
-  # - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
+
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -17,6 +17,8 @@ class Assets {
 
   /// onboarding_icons
   static const String iconGoogle = 'assets/icons/onboarding_icons/google.png';
+  static const String iconPasswordHidden = 'assets/icons/onboarding_icons/password/password_hidden.png';
+  static const String iconPasswordUnHidden = 'assets/icons/onboarding_icons/password/password_unhidden.png';
 
   /// search_bar_icons
   static const String iconKeyboardVoice =
@@ -46,7 +48,7 @@ class Assets {
       'assets/images/food_order_images/background.png';
 
   /// main_images
-  static const String imageMainLogo = 'assets/images/main_photos/main_logo.svg';
+  static const String imageMainLogo = 'assets/images/main_images/main_logo.svg';
 
   /// viewall_images
   static const String imageMomo = 'assets/images/viewall_images/momo.png';
