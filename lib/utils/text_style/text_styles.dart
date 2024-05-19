@@ -8,3 +8,10 @@ TextStyle defaultTextStyle = TextStyle(
   color: AppColors.textColorBlack,
   fontWeight: FontWeight.w400,
 );
+
+TextStyle poppinsTextStyple = TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 14.sp,
+  color: AppColors.textColorBlack,
+  fontWeight: FontWeight.w400,
+);

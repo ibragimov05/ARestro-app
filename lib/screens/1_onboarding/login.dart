@@ -47,6 +47,8 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.symmetric(horizontal: 39.w),
         child: Center(
           child: ListView(
+            physics: BouncingScrollPhysics(),
+
             children: [
               SizedBox(
                 height: checkErrorMessage() ? 40.h : 70.h,
@@ -171,13 +173,17 @@ class _LoginPageState extends State<LoginPage> {
 
                   /// user not found or entered invalid password
                   setState(() {
-                    if (!isUserFound) {
-                      passwordErrorMessage = '';
-                      emailErrorMessage =
-                          'Couldn\'t find user with email ${emailTextEditController.text}';
-                    } else if (!isPasswordTrue) {
-                      emailErrorMessage = '';
-                      passwordErrorMessage = 'Password you entered is false';
+                    if (emailTextEditController.text.isNotEmpty) {
+                      if (!isUserFound) {
+                        passwordErrorMessage = '';
+                        emailErrorMessage =
+                            'Couldn\'t find user with email ${emailTextEditController.text}';
+                      } else if (!isPasswordTrue) {
+                        emailErrorMessage = '';
+                        passwordErrorMessage = 'Password you entered is false';
+                      }
+                    } else {
+                      emailErrorMessage = 'Email can\'t be empty';
                     }
                   });
 

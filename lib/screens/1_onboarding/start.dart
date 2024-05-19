@@ -23,7 +23,6 @@ class StartPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 39.w),
           child: Column(
             children: [
-
               /// main logo in center
               166.height(),
               SvgPicture.asset(

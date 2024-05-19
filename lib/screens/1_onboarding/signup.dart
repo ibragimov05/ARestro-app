@@ -49,6 +49,7 @@ class _SignupPageState extends State<SignupPage> {
         padding: EdgeInsets.symmetric(horizontal: 39.w),
         child: Center(
           child: ListView(
+            physics: BouncingScrollPhysics(),
             children: [
               SizedBox(
                 height: checkErrorMessage() ? 10.h : 60.h,

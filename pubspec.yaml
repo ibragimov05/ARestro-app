@@ -71,6 +71,7 @@ flutter:
     - assets/icons/food_order_icons/star/
     - assets/icons/tab_box_icons/
     - assets/images/main_images/
+    - assets/images/main_images/restaurants/
     - assets/images/dashboard_images/
     - assets/images/dashboard_images/foods/
     - assets/images/viewall_images/
