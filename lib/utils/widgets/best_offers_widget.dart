@@ -1,7 +1,9 @@
 import 'package:arestro_app/generated/assets.dart';
+import 'package:arestro_app/screens/3_view_all/all_view_food.dart';
 import 'package:arestro_app/utils/colors/colors.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
 import 'package:arestro_app/utils/text_style/text_styles.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -46,7 +48,19 @@ class CustomBestOffers extends StatelessWidget {
             )
           ],
         ),
+
+        /// navigating into next page which is all foods info page
         ZoomTapAnimation(
+          onTap: () {
+            Navigator.pushReplacement(
+              context,
+              CupertinoPageRoute(
+                builder: (context) {
+                  return AllViewFoodPage();
+                },
+              ),
+            );
+          },
           child: Row(
             children: [
               Text(

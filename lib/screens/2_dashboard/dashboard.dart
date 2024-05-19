@@ -2,6 +2,7 @@ import 'package:arestro_app/generated/assets.dart';
 import 'package:arestro_app/models/food_data.dart';
 import 'package:arestro_app/models/restaurants_data.dart';
 import 'package:arestro_app/screens/2_dashboard/widgets/foods_info.dart';
+import 'package:arestro_app/screens/3_view_all/widgets/all_view_restaurant.dart';
 import 'package:arestro_app/utils/colors/colors.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
 import 'package:arestro_app/utils/text_style/text_styles.dart';
@@ -10,6 +11,7 @@ import 'package:arestro_app/utils/widgets/bottom_navigation_bar.dart';
 import 'package:arestro_app/utils/widgets/custom_app_bar.dart';
 import 'package:arestro_app/utils/widgets/restaurant_info_row.dart';
 import 'package:arestro_app/utils/widgets/search_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
@@ -22,12 +24,6 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
-  // List<Map<String, dynamic>> foodDataList = [
-  //   {'foodImage': Assets.imageFood1, 'foodName': 'Food 1', 'foodPrice': '310'},
-  //   {'foodImage': Assets.imageFood2, 'foodName': 'Food 2', 'foodPrice': '285'},
-  //   {'foodImage': Assets.imageFood3, 'foodName': 'Food 3', 'foodPrice': '300'},
-  // ];
-
   @override
   void initState() {
     super.initState();
@@ -48,7 +44,7 @@ class _DashboardPageState extends State<DashboardPage> {
       ),
       body: ListView(
         physics: BouncingScrollPhysics(),
-        children: [d
+        children: [
           24.height(),
 
           /// main container in top with special offer
@@ -125,7 +121,7 @@ class _DashboardPageState extends State<DashboardPage> {
           /// search bar
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
-            child: CustomSearchBar(),
+            child: CustomSearchBar(isSearchable: false),
           ),
           18.height(),
 
@@ -141,11 +137,13 @@ class _DashboardPageState extends State<DashboardPage> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                for (var each in foodDataList)
+                // for (var each in foodDataList)
+                for (int i = 0; i < foodDataList.length; i++)
                   CustomFoodInfo(
-                    foodImage: each.foodImage,
-                    foodName: each.foodName,
-                    foodPrice: each.foodPrice,
+                    foodImage: foodDataList[i].foodImage,
+                    foodName: foodDataList[i].foodName,
+                    foodPrice: foodDataList[i].foodPrice,
+                    index: i,
                   ),
               ],
             ),
@@ -167,7 +165,16 @@ class _DashboardPageState extends State<DashboardPage> {
                   ),
                 ),
                 ZoomTapAnimation(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) {
+                          return AllViewRestaurant();
+                        },
+                      ),
+                    );
+                  },
                   child: Row(
                     children: [
                       Text(
@@ -194,11 +201,14 @@ class _DashboardPageState extends State<DashboardPage> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                for (var each in restaurantDataList)
+                for (int i = 0; i < restaurantDataList.length; i++)
                   CustomRestaurantInfo(
-                    restaurantImagePath: each.restaurantImagePath,
-                    restaurantName: each.restaurantName,
-                    restaurantRating: each.restaurantRating,
+                    restaurantImagePath:
+                        restaurantDataList[i].restaurantImagePath,
+                    restaurantName: restaurantDataList[i].restaurantName,
+                    restaurantRating: restaurantDataList[i].restaurantRating,
+                    isSelected: false,
+                    index: i,
                   ),
               ],
             ),

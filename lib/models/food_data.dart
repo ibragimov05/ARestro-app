@@ -13,7 +13,7 @@ class FoodData {
 }
 
 List<FoodData> foodDataList = [
-  FoodData(foodImage: Assets.imageFood1, foodName: 'Food 1', foodPrice: '310'),
-  FoodData(foodImage: Assets.imageFood2, foodName: 'Food 2', foodPrice: '285'),
-  FoodData(foodImage: Assets.imageFood3, foodName: 'Food 3', foodPrice: '300'),
+  FoodData(foodImage: Assets.imageFood1, foodName: 'Palov', foodPrice: '310'),
+  FoodData(foodImage: Assets.imageFood2, foodName: 'Soup', foodPrice: '285'),
+  FoodData(foodImage: Assets.imageFood3, foodName: 'Manti', foodPrice: '300'),
 ];

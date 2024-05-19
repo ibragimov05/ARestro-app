@@ -1,3 +1,4 @@
+import 'package:arestro_app/screens/5_food_order/food_order_food_details.dart';
 import 'package:arestro_app/utils/colors/colors.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
 import 'package:arestro_app/utils/text_style/text_styles.dart';
@@ -11,18 +12,34 @@ class CustomFoodInfo extends StatelessWidget {
   final String foodImage;
   final String foodName;
   final String foodPrice;
+  final int index;
 
   const CustomFoodInfo({
     super.key,
     required this.foodImage,
     required this.foodName,
     required this.foodPrice,
+    required this.index,
   });
 
   @override
   Widget build(BuildContext context) {
     return ZoomTapAnimation(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushReplacement(
+          context,
+          CupertinoPageRoute(
+            builder: (context) {
+              return FoodOrderDetailsPage(
+                foodImage: foodImage,
+                foodName: foodName,
+                foodPrice: foodPrice,
+                isBestOffers: true,
+              );
+            },
+          ),
+        );
+      },
       child: Container(
         width: 120.w,
         height: 240.h,
@@ -92,7 +109,6 @@ class CustomFoodInfo extends StatelessWidget {
             ),
             Positioned(
               top: 0,
-              // alignment: ,
               child: Container(
                 width: 124.w,
                 height: 124.h,

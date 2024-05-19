@@ -57,6 +57,12 @@ class Assets {
   static const String imageMainLogo = 'assets/images/main_images/main_logo.svg';
   static const String imageProfilePhoto =
       'assets/images/main_images/profile_photo.png';
+  static const String imageFiveStar =
+      'assets/images/main_images/five_star.png';
+  static const String imageLocation =
+      'assets/images/main_images/location.svg';
+  static const String imageTick =
+      'assets/images/main_images/tick.svg';
   static const String imageRes1 =
       'assets/images/main_images/restaurants/res1.jpg';
   static const String imageRes2 =
@@ -67,8 +73,32 @@ class Assets {
       'assets/images/main_images/restaurants/res4.jpg';
 
   /// viewall_images
-  static const String imageMomo = 'assets/images/viewall_images/momo.png';
-  static const String imagePizza = 'assets/images/viewall_images/pizza.png';
-  static const String imageRestaurant =
-      'assets/images/viewall_images/restaurant.png';
+  static const String imageMomo1 =
+      'assets/images/viewall_images/foods/momo1.jpg';
+  static const String imageMomo2 =
+      'assets/images/viewall_images/foods/momo2.jpg';
+  static const String imageMomo3 =
+      'assets/images/viewall_images/foods/momo3.jpg';
+  static const String imageMomo4 =
+      'assets/images/viewall_images/foods/momo4.jpg';
+  static const String imageMomo5 =
+      'assets/images/viewall_images/foods/momo5.png';
+
+  static const String imagePizza1 =
+      'assets/images/viewall_images/pizza/pizza1.jpg';
+  static const String imagePizza2 =
+      'assets/images/viewall_images/pizza/pizza2.jpg';
+  static const String imagePizza3 =
+      'assets/images/viewall_images/pizza/pizza3.jpg';
+  static const String imagePizza4 =
+      'assets/images/viewall_images/pizza/pizza4.jpg';
+
+  static const String imageBurger1 =
+      'assets/images/viewall_images/burgers/burger1.jpg';
+  static const String imageBurger2 =
+      'assets/images/viewall_images/burgers/burger2.jpg';
+  static const String imageBurger3 =
+      'assets/images/viewall_images/burgers/burger3.jpg';
+  static const String imageBurger4 =
+      'assets/images/viewall_images/burgers/burger4.jpg';
 }

@@ -1,15 +1,24 @@
 import 'package:arestro_app/generated/assets.dart';
+import 'package:arestro_app/screens/2_dashboard/dashboard.dart';
+import 'package:arestro_app/screens/5_food_order/cart_page.dart';
+import 'package:arestro_app/screens/7_search_page/search_page.dart';
 import 'package:arestro_app/utils/colors/colors.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
 import 'package:arestro_app/utils/text_style/text_styles.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
-class CustomTabBox extends StatelessWidget {
+class CustomTabBox extends StatefulWidget {
   CustomTabBox({super.key});
 
+  @override
+  State<CustomTabBox> createState() => _CustomTabBoxState();
+}
+
+class _CustomTabBoxState extends State<CustomTabBox> {
   List<Map<String, dynamic>> tabBoxButtonData = [
     {
       'iconPath': Assets.iconTabBoxHome,
@@ -38,12 +47,69 @@ class CustomTabBox extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          for (var each in tabBoxButtonData)
-            customButtonMaker(
-              iconPath: each['iconPath'],
-              iconName: each['iconName'],
-              isSelected: each['isSelected'],
-            ),
+          customButtonMaker(
+            iconPath: tabBoxButtonData[0]['iconPath'],
+            iconName: tabBoxButtonData[0]['iconName'],
+            isSelected: tabBoxButtonData[0]['isSelected'],
+            onTap: () {
+              setState(() {
+                tabBoxButtonData[0]['isSelected'] = true;
+                tabBoxButtonData[1]['isSelected'] = false;
+                tabBoxButtonData[2]['isSelected'] = false;
+              });
+
+              Navigator.pushReplacement(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) {
+                    return DashboardPage();
+                  },
+                ),
+              );
+            },
+          ),
+          customButtonMaker(
+            iconPath: tabBoxButtonData[1]['iconPath'],
+            iconName: tabBoxButtonData[1]['iconName'],
+            isSelected: tabBoxButtonData[1]['isSelected'],
+            onTap: () {
+              setState(() {
+                tabBoxButtonData[0]['isSelected'] = false;
+                tabBoxButtonData[1]['isSelected'] = true;
+                tabBoxButtonData[2]['isSelected'] = false;
+              });
+
+              Navigator.pushReplacement(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) {
+                    return SearchPage();
+                  },
+                ),
+              );
+            },
+          ),
+          customButtonMaker(
+            iconPath: tabBoxButtonData[2]['iconPath'],
+            iconName: tabBoxButtonData[2]['iconName'],
+            isSelected: tabBoxButtonData[2]['isSelected'],
+            onTap: () {
+              setState(() {
+                tabBoxButtonData[0]['isSelected'] = false;
+                tabBoxButtonData[1]['isSelected'] = false;
+                tabBoxButtonData[2]['isSelected'] = true;
+              });
+
+              Navigator.pushReplacement(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) {
+                    return CartPage();
+                  },
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
@@ -53,9 +119,10 @@ class CustomTabBox extends StatelessWidget {
     required String iconPath,
     required String iconName,
     required bool isSelected,
+    required Function() onTap,
   }) {
     return ZoomTapAnimation(
-      onTap: () {},
+      onTap: onTap,
       child: Column(
         children: [
           SvgPicture.asset(
