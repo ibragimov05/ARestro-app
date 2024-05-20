@@ -15,22 +15,22 @@ class PizzaFoodData {
 List<PizzaFoodData> pizzaFoodDataList = [
   PizzaFoodData(
     foodImage: Assets.imagePizza1,
-    foodName: 'Margherita Pizza',
+    foodName: 'Margherita',
     foodPrice: '310',
   ),
   PizzaFoodData(
     foodImage: Assets.imagePizza2,
-    foodName: 'Pepperoni Pizza',
+    foodName: 'Pepperoni',
     foodPrice: '300',
   ),
   PizzaFoodData(
     foodImage: Assets.imagePizza3,
-    foodName: 'BBQ Chicken Pizza',
+    foodName: 'BBQ Chicken',
     foodPrice: '420',
   ),
   PizzaFoodData(
     foodImage: Assets.imagePizza4,
-    foodName: 'Veggie Supreme Pizza',
+    foodName: 'Veggie Supreme',
     foodPrice: '150',
   ),
 ];

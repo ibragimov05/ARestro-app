@@ -7,7 +7,6 @@ import 'package:arestro_app/screens/5_food_order/widgets/float_row_maker.dart';
 import 'package:arestro_app/utils/colors/colors.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
 import 'package:arestro_app/utils/text_style/text_styles.dart';
-import 'package:arestro_app/utils/widgets/bottom_navigation_bar.dart';
 import 'package:arestro_app/utils/widgets/custom_app_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -50,14 +49,14 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFfbfbfb),
-      appBar: PreferredSize(
+      backgroundColor: const Color(0xFFfbfbfb),
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppBar(isSelected: false),
       ),
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             alignment: Alignment(-1, -1.5),
             image: AssetImage(Assets.imageLittleBackground),
@@ -69,16 +68,17 @@ class _CartPageState extends State<CartPage> {
           ),
         ),
         child: ListView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           children: [
             Padding(
               padding: EdgeInsets.only(left: 26.w, top: 11.h),
               child: Text(
                 'Order details',
                 style: defaultTextStyle.copyWith(
-                    fontWeight: FontWeight.w800,
-                    fontSize: 26.sp,
-                    color: AppColors.textColorBlack),
+                  fontWeight: FontWeight.w800,
+                  fontSize: 26.sp,
+                  color: AppColors.textColorBlack,
+                ),
               ),
             ),
             16.height(),
@@ -120,8 +120,8 @@ class _CartPageState extends State<CartPage> {
               margin: EdgeInsets.symmetric(horizontal: 15.w),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.r),
-                color: Color(0xFF004422),
-                image: DecorationImage(
+                color: const Color(0xFF004422),
+                image: const DecorationImage(
                   image: AssetImage(
                     'assets/images/food_order_images/float_back.png',
                   ),
@@ -143,7 +143,7 @@ class _CartPageState extends State<CartPage> {
                       children: [
                         CustomFloatRowMakerText(
                           text1: 'Sub total',
-                          text2: 'Rs ${_subTotal}',
+                          text2: 'Rs $_subTotal',
                           isSelected: false,
                         ),
                         CustomFloatRowMakerText(
@@ -176,22 +176,28 @@ class _CartPageState extends State<CartPage> {
                         CustomFloatButton(
                           buttonText: 'Go to home page',
                           onTapFunction: () {
-                            Navigator.pushAndRemoveUntil(context,
-                                CupertinoPageRoute(
-                              builder: (context) {
-                                return DashboardPage();
-                              },
-                            ), (route) => false);
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              CupertinoPageRoute(
+                                builder: (context) {
+                                  return DashboardPage();
+                                },
+                              ),
+                              (route) => false,
+                            );
                           },
                           isSelected: false,
                         ),
                         CustomFloatButton(
                           buttonText: 'Place My Order',
                           onTapFunction: () {
-                            Navigator.pushAndRemoveUntil(context,
-                                CupertinoPageRoute(builder: (context) {
-                              return FoodOrderCompletePage();
-                            }), (route) => false);
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              CupertinoPageRoute(builder: (context) {
+                                return const FoodOrderCompletePage();
+                              }),
+                              (route) => false,
+                            );
                           },
                           isSelected: false,
                         ),
@@ -233,7 +239,7 @@ class _CartPageState extends State<CartPage> {
             borderRadius: BorderRadius.circular(12.r),
             color: AppColors.darkGreen,
           ),
-          child: Row(
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Icon(
@@ -258,12 +264,11 @@ class _CartPageState extends State<CartPage> {
             Container(
               width: 360.w,
               decoration: BoxDecoration(
-                // color: Colors.yellow,
                 color: AppColors.mainTextColorWhite,
                 borderRadius: BorderRadius.circular(12.r),
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0xFF5A6CEA).withOpacity(0.07),
+                    color: const Color(0xFF5A6CEA).withOpacity(0.07),
                     blurRadius: 10,
                     spreadRadius: 10,
                   )
@@ -277,12 +282,13 @@ class _CartPageState extends State<CartPage> {
                     width: 65.w,
                     height: 65.h,
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: AssetImage(
-                              userCartList[index].foodImage,
-                            ),
-                            fit: BoxFit.fill)),
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: AssetImage(
+                            userCartList[index].foodImage,
+                          ),
+                          fit: BoxFit.fill),
+                    ),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -298,7 +304,7 @@ class _CartPageState extends State<CartPage> {
                         'Food Factory LTD',
                         style: defaultTextStyle.copyWith(
                           fontWeight: FontWeight.w600,
-                          color: Color(0xFF3B3B3B).withOpacity(0.3),
+                          color: const Color(0xFF3B3B3B).withOpacity(0.3),
                         ),
                       ),
                       Text(
@@ -324,7 +330,7 @@ class _CartPageState extends State<CartPage> {
                           height: 27.h,
                           width: 27.w,
                           decoration: BoxDecoration(
-                            color: Color(0xFF004422).withOpacity(0.1),
+                            color: const Color(0xFF004422).withOpacity(0.1),
                             borderRadius: BorderRadius.circular(5.r),
                           ),
                           child: Center(
@@ -340,7 +346,7 @@ class _CartPageState extends State<CartPage> {
                         style: defaultTextStyle.copyWith(
                           fontWeight: FontWeight.w500,
                           fontSize: 16.sp,
-                          color: Color(0xFF181818).withOpacity(0.7),
+                          color: const Color(0xFF181818).withOpacity(0.7),
                         ),
                       ),
                       7.width(),
@@ -372,7 +378,7 @@ class _CartPageState extends State<CartPage> {
                           });
                         },
                         child: Container(
-                          padding: EdgeInsets.all(7),
+                          padding: const EdgeInsets.all(7),
                           height: 27.h,
                           width: 27.w,
                           decoration: BoxDecoration(
@@ -387,7 +393,7 @@ class _CartPageState extends State<CartPage> {
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),

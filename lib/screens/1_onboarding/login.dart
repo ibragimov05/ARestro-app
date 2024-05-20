@@ -10,13 +10,12 @@ import 'package:arestro_app/utils/extension/sized_box_extension.dart';
 import 'package:arestro_app/utils/text_style/text_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({super.key});
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -47,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.symmetric(horizontal: 39.w),
         child: Center(
           child: ListView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
 
             children: [
               SizedBox(
@@ -112,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5.r),
                             border: Border.all(
-                              color: Color(0xFFCDD1E0),
+                              color: const Color(0xFFCDD1E0),
                             ),
                           ),
                           child: isRememberMeButtonPressed
@@ -203,7 +202,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
               59.height(),
-              OrContinueWithWidget(
+              const OrContinueWithWidget(
                 googleButtonText: 'Login',
                 accountText: 'Don’t have an account ? ',
                 accountButtonText: 'Signup',

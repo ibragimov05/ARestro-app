@@ -1,8 +1,4 @@
 import 'package:arestro_app/models/burger_food_data.dart';
-import 'package:arestro_app/models/burger_food_data.dart';
-import 'package:arestro_app/models/burger_food_data.dart';
-import 'package:arestro_app/models/burger_food_data.dart';
-import 'package:arestro_app/models/food_data.dart';
 import 'package:arestro_app/models/momo_food_data.dart';
 import 'package:arestro_app/models/pizza_food_data.dart';
 import 'package:arestro_app/screens/3_view_all/widgets/view_all_row_creator.dart';
@@ -24,12 +20,12 @@ class AllViewFoodPage extends StatelessWidget {
       backgroundColor: AppColors.appBackgroundColor,
 
       /// appbar
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppBar(isSelected: false),
       ),
       body: ListView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           23.height(),
           23.height(),
@@ -37,7 +33,7 @@ class AllViewFoodPage extends StatelessWidget {
           /// search bar
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
-            child: CustomSearchBar(isSearchable: false),
+            child: const CustomSearchBar(isSearchable: false),
           ),
           15.height(),
 
@@ -49,7 +45,7 @@ class AllViewFoodPage extends StatelessWidget {
               style: defaultTextStyle.copyWith(
                 fontWeight: FontWeight.w700,
                 fontSize: 26.sp,
-                color: Color(0xFF40484E),
+                color: const Color(0xFF40484E),
               ),
             ),
           ),
@@ -81,7 +77,7 @@ class AllViewFoodPage extends StatelessWidget {
               style: defaultTextStyle.copyWith(
                 fontWeight: FontWeight.w700,
                 fontSize: 26.sp,
-                color: Color(0xFF40484E),
+                color: const Color(0xFF40484E),
               ),
             ),
           ),
@@ -113,7 +109,7 @@ class AllViewFoodPage extends StatelessWidget {
               style: defaultTextStyle.copyWith(
                 fontWeight: FontWeight.w700,
                 fontSize: 26.sp,
-                color: Color(0xFF40484E),
+                color: const Color(0xFF40484E),
               ),
             ),
           ),

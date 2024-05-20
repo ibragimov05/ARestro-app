@@ -6,7 +6,6 @@ import 'package:arestro_app/utils/text_style/text_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class CustomBestOffers extends StatelessWidget {
@@ -24,8 +23,7 @@ class CustomBestOffers extends StatelessWidget {
               style: defaultTextStyle.copyWith(
                 fontWeight: FontWeight.w700,
                 fontSize: 20.sp,
-                color: Color(0xFF40484E),
-                // color: AppColors.mainTextGreyColor,
+                color: const Color(0xFF40484E),
               ),
             ),
             8.width(),
@@ -33,7 +31,7 @@ class CustomBestOffers extends StatelessWidget {
               width: 36.w,
               height: 36.h,
               padding: EdgeInsets.all(8.sp),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: AppColors.mainTextColorWhite,
                   shape: BoxShape.circle,
                   boxShadow: [
@@ -56,7 +54,7 @@ class CustomBestOffers extends StatelessWidget {
               context,
               CupertinoPageRoute(
                 builder: (context) {
-                  return AllViewFoodPage();
+                  return const AllViewFoodPage();
                 },
               ),
             );

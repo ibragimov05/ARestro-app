@@ -28,7 +28,7 @@ class CustomFloatRowMakerText extends StatelessWidget {
             style: defaultTextStyle.copyWith(
               fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
               fontSize: isSelected ? 19.sp : 14.5.sp,
-              color: Color(0xFFFEFEFF),
+              color: const Color(0xFFFEFEFF),
             ),
           ),
           Text(

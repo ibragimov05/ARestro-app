@@ -6,7 +6,6 @@ import 'package:arestro_app/utils/extension/sized_box_extension.dart';
 import 'package:arestro_app/utils/text_style/text_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
@@ -20,8 +19,8 @@ class FoodOrderCompletePage extends StatelessWidget {
       backgroundColor: AppColors.appBackgroundColor,
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          /// backgroung
+        decoration: const BoxDecoration(
+          /// background
           image: DecorationImage(
             alignment: Alignment.topCenter,
             image: AssetImage(
@@ -45,11 +44,11 @@ class FoodOrderCompletePage extends StatelessWidget {
                     height: 85.h,
                     width: 85.w,
                     decoration: BoxDecoration(
-                        color: Color(0xFF009944),
+                        color: const Color(0xFF009944),
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: Color(0xFF40BFFF).withOpacity(0.24),
+                            color: const Color(0xFF40BFFF).withOpacity(0.24),
                             blurRadius: 31.r,
                           )
                         ]),
@@ -76,14 +75,14 @@ class FoodOrderCompletePage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 10.0),
+              padding: const EdgeInsets.only(bottom: 10.0),
               child: Column(
                 children: [
                   /// 5 star putter
-                  StarScreen(),
+                  const StarScreen(),
                   21.height(),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Column(
                       children: [
                         /// feedback leave text field
@@ -91,7 +90,7 @@ class FoodOrderCompletePage extends StatelessWidget {
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.only(left: 1.w),
                             prefixIcon: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: EdgeInsets.all(10.0.sp),
                               child: SvgPicture.asset(
                                 'assets/icons/food_order_icons/edit_icon.svg',
                                 height: 25.h,
@@ -101,19 +100,19 @@ class FoodOrderCompletePage extends StatelessWidget {
                             hintText: 'Leave feedback',
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5.r),
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: AppColors.customSearchBarBorder,
                               ),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5.r),
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: AppColors.customSearchBarBorder,
                               ),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5.r),
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: AppColors.customSearchBarBorder,
                               ),
                             ),
@@ -136,7 +135,7 @@ class FoodOrderCompletePage extends StatelessWidget {
                               context: context,
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -166,8 +165,8 @@ class FoodOrderCompletePage extends StatelessWidget {
         height: 60.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.r),
-          color: isSelected ? AppColors.appBackgroundColor : Color(0xFF009944),
-          border: isSelected ? Border.all(color: Color(0xFF004422)) : null,
+          color: isSelected ? AppColors.appBackgroundColor : const Color(0xFF009944),
+          border: isSelected ? Border.all(color: const Color(0xFF004422)) : null,
         ),
         child: Center(
           child: Text(
@@ -175,7 +174,7 @@ class FoodOrderCompletePage extends StatelessWidget {
             style: defaultTextStyle.copyWith(
               fontWeight: FontWeight.w800,
               fontSize: 15.sp,
-              color: isSelected ? AppColors.darkGreen : Color(0xFFFEFEFF),
+              color: isSelected ? AppColors.darkGreen : const Color(0xFFFEFEFF),
             ),
           ),
         ),

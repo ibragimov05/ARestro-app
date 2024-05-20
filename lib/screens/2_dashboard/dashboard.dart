@@ -39,12 +39,12 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.appBackgroundColor,
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppBar(isSelected: false),
       ),
       body: ListView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           24.height(),
 
@@ -57,11 +57,11 @@ class _DashboardPageState extends State<DashboardPage> {
               padding: EdgeInsets.only(top: 17.h, left: 21.w, bottom: 15.h),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.r),
-                image: DecorationImage(
+                image: const DecorationImage(
                   alignment: Alignment.bottomRight,
                   image: AssetImage(Assets.imageThreeBurger),
                 ),
-                gradient: LinearGradient(colors: [
+                gradient: const LinearGradient(colors: [
                   Color(0xFF0e502f),
                   Color(0xFF8dbda5),
                 ], begin: Alignment.topLeft, end: Alignment.bottomRight),
@@ -100,14 +100,16 @@ class _DashboardPageState extends State<DashboardPage> {
                         context,
                         CupertinoPageRoute(
                           builder: (context) {
-                            return AllViewFoodPage();
+                            return const AllViewFoodPage();
                           },
                         ),
                       );
                     },
                     child: Container(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 15.h, vertical: 8.5.w),
+                        horizontal: 15.h,
+                        vertical: 8.5.w,
+                      ),
                       decoration: BoxDecoration(
                         color: AppColors.mainTextColorWhite,
                         borderRadius: BorderRadius.circular(5.r),
@@ -131,14 +133,14 @@ class _DashboardPageState extends State<DashboardPage> {
           /// search bar
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
-            child: CustomSearchBar(isSearchable: false),
+            child: const CustomSearchBar(isSearchable: false),
           ),
           18.height(),
 
           /// best offers row
           Padding(
             padding: EdgeInsets.only(left: 38.w, right: 31.w),
-            child: CustomBestOffers(),
+            child: const CustomBestOffers(),
           ),
           16.height(),
 
@@ -171,7 +173,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   style: defaultTextStyle.copyWith(
                     fontWeight: FontWeight.w700,
                     fontSize: 20.sp,
-                    color: Color(0xFF40484E),
+                    color: const Color(0xFF40484E),
                   ),
                 ),
                 ZoomTapAnimation(
@@ -180,7 +182,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       context,
                       CupertinoPageRoute(
                         builder: (context) {
-                          return AllViewRestaurant();
+                          return const AllViewRestaurant();
                         },
                       ),
                     );
@@ -190,13 +192,13 @@ class _DashboardPageState extends State<DashboardPage> {
                       Text(
                         'See all',
                         style: defaultTextStyle.copyWith(
-                            fontSize: 12.sp, color: Color(0xFF00CC55)),
+                            fontSize: 12.sp, color: const Color(0xFF00CC55)),
                       ),
                       4.width(),
                       Icon(
                         Icons.arrow_forward_ios_rounded,
                         size: 15.sp,
-                        color: Color(0xFF00CC55),
+                        color: const Color(0xFF00CC55),
                       ),
                     ],
                   ),

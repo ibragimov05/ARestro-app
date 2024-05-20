@@ -1,5 +1,3 @@
-import 'package:arestro_app/generated/assets.dart';
-
 class UserCart {
   String foodImage;
   String foodName;

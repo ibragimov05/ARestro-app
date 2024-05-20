@@ -30,12 +30,12 @@ class FoodOrderDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.appBackgroundColor,
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppBar(isSelected: false),
       ),
       body: ListView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           /// food image
           SizedBox(
@@ -92,10 +92,11 @@ class FoodOrderDetailsPage extends StatelessWidget {
                         Container(
                           width: 35.w,
                           height: 35.h,
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                              color: AppColors.darkGreen.withOpacity(0.1),
-                              shape: BoxShape.circle),
+                            color: AppColors.darkGreen.withOpacity(0.1),
+                            shape: BoxShape.circle,
+                          ),
                           child: SvgPicture.asset(Assets.imageLocation),
                         ),
                         12.width(),
@@ -104,8 +105,9 @@ class FoodOrderDetailsPage extends StatelessWidget {
                           height: 35.h,
                           // padding: EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                              color: AppColors.textColorBlack.withOpacity(0.1),
-                              shape: BoxShape.circle),
+                            color: AppColors.textColorBlack.withOpacity(0.1),
+                            shape: BoxShape.circle,
+                          ),
                           child: Icon(
                             Icons.favorite,
                             size: 16.sp,
@@ -121,7 +123,7 @@ class FoodOrderDetailsPage extends StatelessWidget {
                   style: defaultTextStyle.copyWith(
                     fontWeight: FontWeight.w700,
                     fontSize: 28.sp,
-                    color: Color(0xFF09051C),
+                    color: const Color(0xFF09051C),
                   ),
                 ),
                 17.height(),
@@ -141,7 +143,7 @@ class FoodOrderDetailsPage extends StatelessWidget {
                           Text(
                             '4.8 Rating',
                             style: defaultTextStyle.copyWith(
-                              color: Color(0xFF989898),
+                              color: const Color(0xFF989898),
                               fontSize: 13.sp,
                             ),
                           ),
@@ -158,7 +160,7 @@ class FoodOrderDetailsPage extends StatelessWidget {
                           Text(
                             '2000+ Order',
                             style: defaultTextStyle.copyWith(
-                              color: Color(0xFF989898),
+                              color: const Color(0xFF989898),
                               fontSize: 13.sp,
                             ),
                           ),
@@ -277,7 +279,7 @@ class FoodOrderDetailsPage extends StatelessWidget {
 
   Widget rowMaker({required String text}) {
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
       child: Row(
         children: [
           Icon(

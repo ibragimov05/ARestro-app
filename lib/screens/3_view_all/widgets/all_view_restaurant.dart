@@ -18,19 +18,19 @@ class AllViewRestaurant extends StatelessWidget {
       backgroundColor: AppColors.appBackgroundColor,
 
       /// appbar
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppBar(isSelected: false),
       ),
       body: ListView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           23.height(),
 
           /// search bar
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
-            child: CustomSearchBar(isSearchable: false),
+            child: const CustomSearchBar(isSearchable: false),
           ),
           24.height(),
 
@@ -42,7 +42,7 @@ class AllViewRestaurant extends StatelessWidget {
               style: defaultTextStyle.copyWith(
                 fontWeight: FontWeight.w700,
                 fontSize: 24.sp,
-                color: Color(0xFF40484E),
+                color: const Color(0xFF40484E),
               ),
             ),
           ),
@@ -73,7 +73,7 @@ class AllViewRestaurant extends StatelessWidget {
               style: defaultTextStyle.copyWith(
                 fontWeight: FontWeight.w700,
                 fontSize: 24.sp,
-                color: Color(0xFF40484E),
+                color: const Color(0xFF40484E),
               ),
             ),
           ),

@@ -1,14 +1,8 @@
-import 'package:arestro_app/generated/assets.dart';
-import 'package:arestro_app/models/cart_data.dart';
-import 'package:arestro_app/models/user_data.dart';
 import 'package:arestro_app/screens/5_food_order/food_order_food_details.dart';
 import 'package:arestro_app/utils/colors/colors.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
-import 'package:arestro_app/utils/text_style/text_styles.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
@@ -54,7 +48,7 @@ class CustomFoodRow extends StatelessWidget {
             ? EdgeInsets.only(left: 8.sp, right: 8.sp, top: 10.h)
             : EdgeInsets.only(left: index == 0 ? 30.w : 11.w, right: 11),
         decoration: BoxDecoration(
-          color: isSearch ? AppColors.appBackgroundColor : Color(0xFFFFFFFF),
+          color: isSearch ? AppColors.appBackgroundColor : const Color(0xFFFFFFFF),
           // color: Colors.yellow,
           borderRadius: BorderRadius.circular(18.r),
         ),
@@ -94,7 +88,7 @@ class CustomFoodRow extends StatelessWidget {
                           style: GoogleFonts.inter(
                             fontWeight: FontWeight.w500,
                             fontSize: 16.sp,
-                            color: Color(0xFF000000).withOpacity(0.5),
+                            color: const Color(0xFF000000).withOpacity(0.5),
                           ),
                         ),
                       ],
@@ -140,10 +134,9 @@ class CustomFoodRow extends StatelessWidget {
                                 style: GoogleFonts.inter(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 16.sp,
-                                  color: Color(0xFF000000).withOpacity(0.5),
+                                  color: const Color(0xFF000000).withOpacity(0.5),
                                 ),
                               ),
-                              // 10.width(),
                             ],
                           ),
                         ),

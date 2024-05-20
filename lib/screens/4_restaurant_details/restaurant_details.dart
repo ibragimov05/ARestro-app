@@ -11,7 +11,6 @@ import 'package:arestro_app/utils/widgets/custom_app_bar.dart';
 import 'package:arestro_app/utils/widgets/custom_floating_action_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
@@ -28,14 +27,14 @@ class RestaurantDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.appBackgroundColor,
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppBar(isSelected: false),
       ),
       body: ListView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
-          Container(
+          SizedBox(
             width: double.infinity,
             height: 240.h,
             child: Image.asset(
@@ -43,9 +42,6 @@ class RestaurantDetails extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          // Column(
-          //   children: [],
-          // )
           31.height(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 37.w),
@@ -56,7 +52,7 @@ class RestaurantDetails extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
+                    SizedBox(
                       width: 225.w,
                       child: Text(
                         restaurantDataList[index].restaurantName,
@@ -90,9 +86,10 @@ class RestaurantDetails extends StatelessWidget {
                         Text(
                           '1.2 km from Location',
                           style: defaultTextStyle.copyWith(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12.sp,
-                              color: AppColors.textColorBlack.withOpacity(0.5)),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12.sp,
+                            color: AppColors.textColorBlack.withOpacity(0.5),
+                          ),
                         ),
                       ],
                     ),
@@ -104,9 +101,9 @@ class RestaurantDetails extends StatelessWidget {
                         'View on Google Maps',
                         style: defaultTextStyle.copyWith(
                           fontSize: 12.sp,
-                          color: Color(0xFF8B3C76),
+                          color: const Color(0xFF8B3C76),
                           decoration: TextDecoration.underline,
-                          decorationColor: Color(0xFF8B3C76),
+                          decorationColor: const Color(0xFF8B3C76),
                         ),
                       ),
                     ),
@@ -166,7 +163,7 @@ class RestaurantDetails extends StatelessWidget {
 
                 /// custom best offers row
                 18.height(),
-                CustomBestOffers(),
+                const CustomBestOffers(),
               ],
             ),
           ),
@@ -184,7 +181,6 @@ class RestaurantDetails extends StatelessWidget {
                     foodName: foodDataList[i].foodName,
                     foodPrice: foodDataList[i].foodPrice,
                     index: i,
-                    // isBestOffers: false,
                   ),
               ],
             ),

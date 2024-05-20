@@ -31,11 +31,12 @@ class CustomShowDialog extends StatelessWidget {
                 AppColors.mainTextGreyColor.withOpacity(0.05),
               ),
               foregroundColor:
-              MaterialStatePropertyAll(Colors.black)),
+              const MaterialStatePropertyAll(Colors.black)),
           onPressed: () {
             Navigator.of(context).pop();
           },
-          child: Text('OK'),
+          child:
+          const Text('OK'),
         ),
       ],
     );

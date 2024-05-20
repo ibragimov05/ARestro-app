@@ -7,13 +7,12 @@ import 'package:arestro_app/utils/colors/colors.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
 import 'package:arestro_app/utils/text_style/text_styles.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class CustomTabBox extends StatefulWidget {
-  CustomTabBox({super.key});
+  const CustomTabBox({super.key});
 
   @override
   State<CustomTabBox> createState() => _CustomTabBoxState();
@@ -89,7 +88,7 @@ class _CustomTabBoxState extends State<CustomTabBox> {
                 context,
                 CupertinoPageRoute(
                   builder: (context) {
-                    return SearchPage();
+                    return const SearchPage();
                   },
                 ),
               );
@@ -104,7 +103,7 @@ class _CustomTabBoxState extends State<CustomTabBox> {
                 context,
                 CupertinoPageRoute(
                   builder: (context) {
-                    return CartPage();
+                    return const CartPage();
                   },
                 ),
               );

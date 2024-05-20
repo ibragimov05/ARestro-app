@@ -1,4 +1,3 @@
-import 'package:arestro_app/screens/1_onboarding/signup.dart';
 import 'package:arestro_app/screens/1_onboarding/widgets/main_green_button.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
 import 'package:arestro_app/utils/text_style/text_styles.dart';
@@ -27,7 +26,7 @@ class OrContinueWithWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Expanded(
+            const Expanded(
               child: Divider(),
             ),
             9.width(),
@@ -36,7 +35,7 @@ class OrContinueWithWidget extends StatelessWidget {
               style: defaultTextStyle,
             ),
             9.width(),
-            Expanded(
+            const Expanded(
               child: Divider(),
             ),
           ],
@@ -79,9 +78,9 @@ class OrContinueWithWidget extends StatelessWidget {
                 style: defaultTextStyle.copyWith(
                   fontWeight: FontWeight.w600,
                   fontSize: 16.sp,
-                  color: Color(0xFF2F89FC),
+                  color: const Color(0xFF2F89FC),
                   decoration: TextDecoration.underline,
-                  decorationColor: Color(0xFF2F89FC),
+                  decorationColor: const Color(0xFF2F89FC),
                 ),
               ),
             ),

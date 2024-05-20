@@ -86,7 +86,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 ]
               : null,
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.only(left: 15),
+            contentPadding: const EdgeInsets.only(left: 15),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.r),
               borderSide: BorderSide(
@@ -101,7 +101,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.r),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Colors.red,
                 width: 1.5,
               ),
@@ -126,7 +126,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       });
                     },
                     child: isPressed
-                        ? Icon(
+                        ? const Icon(
                             Icons.remove_red_eye,
                             color: Color(0xFF7f7f7f),
                           )

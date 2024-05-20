@@ -1,6 +1,5 @@
 import 'package:arestro_app/generated/assets.dart';
 import 'package:arestro_app/screens/4_restaurant_details/restaurant_details.dart';
-import 'package:arestro_app/utils/colors/colors.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
 import 'package:arestro_app/utils/text_style/text_styles.dart';
 import 'package:flutter/cupertino.dart';
@@ -87,7 +86,7 @@ class CustomRestaurantInfo extends StatelessWidget {
                                 style: defaultTextStyle.copyWith(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 20.sp,
-                                  color: Color(0xFF40484E),
+                                  color: const Color(0xFF40484E),
                                 ),
                               ),
                               5.height(),
@@ -105,7 +104,7 @@ class CustomRestaurantInfo extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: defaultTextStyle.copyWith(
                                       fontSize: 16.sp,
-                                      color: Color(0xFF40484E),
+                                      color: const Color(0xFF40484E),
                                     ),
                                   )
                                 ],
@@ -117,7 +116,7 @@ class CustomRestaurantInfo extends StatelessWidget {
                             child: Text(
                               'Restaurant Description Restaurant Description',
                               style: defaultTextStyle.copyWith(
-                                color: Color(0xFF40484E),
+                                color: const Color(0xFF40484E),
                               ),
                             ),
                           ),
@@ -135,7 +134,7 @@ class CustomRestaurantInfo extends StatelessWidget {
                           style: defaultTextStyle.copyWith(
                             fontWeight: FontWeight.w600,
                             fontSize: 15.5.sp,
-                            color: Color(0xFF40484E),
+                            color: const Color(0xFF40484E),
                           ),
                         ),
                         5.height(),
@@ -148,7 +147,7 @@ class CustomRestaurantInfo extends StatelessWidget {
                               restaurantRating,
                               style: defaultTextStyle.copyWith(
                                 fontSize: 12.sp,
-                                color: Color(0xFF40484E),
+                                color: const Color(0xFF40484E),
                               ),
                             )
                           ],

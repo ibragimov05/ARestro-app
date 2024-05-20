@@ -3,8 +3,6 @@ import 'package:arestro_app/utils/colors/colors.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
 import 'package:arestro_app/utils/text_style/text_styles.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
@@ -56,7 +54,7 @@ class CustomFoodInfo extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16.sp),
                   border: Border.all(
-                    color: Color(0xFF009944).withOpacity(0.1),
+                    color: const Color(0xFF009944).withOpacity(0.1),
                   ),
                 ),
                 child: Column(
@@ -88,7 +86,7 @@ class CustomFoodInfo extends StatelessWidget {
                           style: defaultTextStyle.copyWith(
                             fontWeight: FontWeight.w700,
                             fontSize: 10.sp,
-                            color: Color(0xFF777777),
+                            color: const Color(0xFF777777),
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -109,7 +107,7 @@ class CustomFoodInfo extends StatelessWidget {
             ),
             Positioned(
               top: 0,
-              child: Container(
+              child: SizedBox(
                 width: 124.w,
                 height: 124.h,
                 child: Image.asset(

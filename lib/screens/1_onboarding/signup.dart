@@ -52,7 +52,7 @@ class _SignupPageState extends State<SignupPage> {
         padding: EdgeInsets.symmetric(horizontal: 39.w),
         child: Center(
           child: ListView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             children: [
               SizedBox(
                 height: checkErrorMessage() ? 10.h : 60.h,
@@ -195,7 +195,7 @@ class _SignupPageState extends State<SignupPage> {
                       context,
                       CupertinoPageRoute(
                         builder: (context) {
-                          return LoginPage();
+                          return const LoginPage();
                         },
                       ),
                     );
@@ -204,7 +204,7 @@ class _SignupPageState extends State<SignupPage> {
               ),
 
               32.height(),
-              OrContinueWithWidget(
+              const OrContinueWithWidget(
                 googleButtonText: 'Signup',
                 accountText: 'Already have an account? ',
                 accountButtonText: 'Login',

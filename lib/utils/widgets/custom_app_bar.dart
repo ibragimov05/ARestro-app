@@ -26,7 +26,7 @@ class CustomAppBar extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).pop();
               },
-              child: Icon(Icons.arrow_back_ios_rounded),
+              child: const Icon(Icons.arrow_back_ios_rounded),
             )
           : null,
       title: SizedBox(
@@ -67,7 +67,7 @@ class CustomAppBar extends StatelessWidget {
                       TextSpan(
                         text: 'estro',
                         style: poppinsTextStyple.copyWith(
-                          color: Color(0xFF004422),
+                          color: const Color(0xFF004422),
                           fontWeight: FontWeight.w600,
                           fontSize: 21.sp,
                         ),
@@ -85,7 +85,7 @@ class CustomAppBar extends StatelessWidget {
                   context,
                   CupertinoPageRoute(
                     builder: (context) {
-                      return ProfilePage();
+                      return const ProfilePage();
                     },
                   ),
                 );
@@ -93,8 +93,8 @@ class CustomAppBar extends StatelessWidget {
               child: Container(
                 height: 35.h,
                 width: 35.w,
-                padding: EdgeInsets.all(3),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.all(3),
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(colors: [
                     Color(0xFF3f657c),
                     Color(0xFF8f2b34),

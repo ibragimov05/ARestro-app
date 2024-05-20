@@ -9,7 +9,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -50,7 +49,7 @@ class StartPage extends StatelessWidget {
                     context,
                     CupertinoPageRoute(
                       builder: (context) {
-                        return LoginPage();
+                        return const LoginPage();
                       },
                     ),
                   );
@@ -68,7 +67,7 @@ class StartPage extends StatelessWidget {
                     context,
                     CupertinoPageRoute(
                       builder: (context) {
-                        return SignupPage();
+                        return const SignupPage();
                       },
                     ),
                   );

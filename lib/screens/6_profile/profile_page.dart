@@ -1,5 +1,4 @@
 import 'package:arestro_app/generated/assets.dart';
-import 'package:arestro_app/screens/5_food_order/widgets/float_button_maker.dart';
 import 'package:arestro_app/screens/6_profile/widgets/custom_show_dialog.dart';
 import 'package:arestro_app/utils/colors/colors.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
@@ -23,17 +22,16 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppBar(isSelected: true),
       ),
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             alignment: Alignment(-1, -1.3),
             image: AssetImage(Assets.imageLittleBackground),
-            // opacity: 0.5,
             colorFilter: ColorFilter.mode(
               Color(0xFFe4ebe8),
               BlendMode.srcIn,
@@ -45,18 +43,18 @@ class _ProfilePageState extends State<ProfilePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // 20.height(),
-
               /// user photo
               Container(
                 height: 100.h,
                 width: 100.w,
-                padding: EdgeInsets.all(3),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    Color(0xFF3f657c),
-                    Color(0xFF8f2b34),
-                  ]),
+                padding: const EdgeInsets.all(3),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xFF3f657c),
+                      Color(0xFF8f2b34),
+                    ],
+                  ),
                   shape: BoxShape.circle,
                 ),
                 child: Image.asset(
@@ -69,7 +67,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
-                    color: Color(0xFF009944).withOpacity(0.1),
+                    color: const Color(0xFF009944).withOpacity(0.1),
                   ),
                 ),
                 child: Column(
@@ -124,7 +122,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
-                    color: Color(0xFF009944).withOpacity(0.1),
+                    color: const Color(0xFF009944).withOpacity(0.1),
                   ),
                 ),
                 child: Column(
@@ -163,7 +161,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
               ),
-              ///////////////////////////////////////////////
               1.height(),
             ],
           ),
@@ -178,7 +175,7 @@ class _ProfilePageState extends State<ProfilePage> {
           showDialog(
             context: context,
             builder: (context) {
-              return CustomShowDialog();
+              return const CustomShowDialog();
             },
           );
         },
@@ -198,7 +195,7 @@ class _ProfilePageState extends State<ProfilePage> {
           style: defaultTextStyle.copyWith(
             fontWeight: FontWeight.w600,
             fontSize: 15.sp,
-            color: Color(0xFF3B3B3B),
+            color: const Color(0xFF3B3B3B),
           ),
         ),
         if (!isSelected)

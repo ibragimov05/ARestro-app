@@ -41,7 +41,7 @@ class OnboardingGreenButton extends StatelessWidget {
         /// if isIconSelected == true button should contain google icon
         child: isIconSelected
             ? Padding(
-                padding: EdgeInsets.all(11.0.sp),
+                padding: EdgeInsets.only(left: 10.w),
                 child: Row(
                   children: [
                     Image.asset(Assets.iconGoogle, height: 26.h, width: 26.w),
@@ -52,7 +52,7 @@ class OnboardingGreenButton extends StatelessWidget {
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w600,
                         fontSize: 16.sp,
-                        color: Color(0xFF000000).withOpacity(0.6),
+                        color: const Color(0xFF000000).withOpacity(0.6),
                       ),
                     ),
                   ],
