@@ -32,7 +32,7 @@ class FoodOrderDetailsPage extends StatelessWidget {
       backgroundColor: AppColors.appBackgroundColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
-        child: CustomAppBar(),
+        child: CustomAppBar(isSelected: false),
       ),
       body: ListView(
         physics: BouncingScrollPhysics(),
@@ -132,24 +132,34 @@ class FoodOrderDetailsPage extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          SvgPicture.asset(Assets.iconStar),
-                          10.width(),
+                          SvgPicture.asset(
+                            Assets.iconStar,
+                            height: 15.h,
+                            width: 15.w,
+                          ),
+                          5.width(),
                           Text(
                             '4.8 Rating',
                             style: defaultTextStyle.copyWith(
                               color: Color(0xFF989898),
+                              fontSize: 13.sp,
                             ),
                           ),
                         ],
                       ),
                       Row(
                         children: [
-                          SvgPicture.asset(Assets.iconCart),
-                          7.width(),
+                          SvgPicture.asset(
+                            Assets.iconCart,
+                            width: 21.w,
+                            height: 19.h,
+                          ),
+                          5.width(),
                           Text(
                             '2000+ Order',
                             style: defaultTextStyle.copyWith(
                               color: Color(0xFF989898),
+                              fontSize: 13.sp,
                             ),
                           ),
                         ],
@@ -179,6 +189,7 @@ class FoodOrderDetailsPage extends StatelessWidget {
           80.height(),
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: CustomFloatingActionButton(
         buttonText: 'Add to Cart',
         onTap: () {
@@ -199,6 +210,7 @@ class FoodOrderDetailsPage extends StatelessWidget {
                 foodImage: foodImage,
                 foodName: foodName,
                 foodPrice: foodPrice,
+                foodAmount: 1,
               ),
             );
           }
@@ -210,6 +222,7 @@ class FoodOrderDetailsPage extends StatelessWidget {
               },
             ),
           );
+
           /// showing dialog to user
           showDialog(
             context: context,

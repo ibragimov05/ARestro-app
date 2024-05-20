@@ -2,6 +2,7 @@ import 'package:arestro_app/generated/assets.dart';
 import 'package:arestro_app/models/food_data.dart';
 import 'package:arestro_app/models/restaurants_data.dart';
 import 'package:arestro_app/screens/2_dashboard/widgets/foods_info.dart';
+import 'package:arestro_app/screens/3_view_all/all_view_food.dart';
 import 'package:arestro_app/screens/3_view_all/widgets/all_view_restaurant.dart';
 import 'package:arestro_app/utils/colors/colors.dart';
 import 'package:arestro_app/utils/extension/sized_box_extension.dart';
@@ -40,7 +41,7 @@ class _DashboardPageState extends State<DashboardPage> {
       backgroundColor: AppColors.appBackgroundColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
-        child: CustomAppBar(),
+        child: CustomAppBar(isSelected: false),
       ),
       body: ListView(
         physics: BouncingScrollPhysics(),
@@ -94,7 +95,16 @@ class _DashboardPageState extends State<DashboardPage> {
                   ),
                   13.height(),
                   ZoomTapAnimation(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) {
+                            return AllViewFoodPage();
+                          },
+                        ),
+                      );
+                    },
                     child: Container(
                       padding: EdgeInsets.symmetric(
                           horizontal: 15.h, vertical: 8.5.w),

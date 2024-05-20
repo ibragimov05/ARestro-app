@@ -15,7 +15,7 @@ class SearchPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
-        child: CustomAppBar(),
+        child: CustomAppBar(isSelected: false),
       ),
       body: ListView(
         children: [
@@ -24,10 +24,9 @@ class SearchPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: CustomSearchBar(isSearchable: true),
           ),
-          // if()
-          // Image.asset(
-          //   'assets/gif/search_animation.gif',
-          // ),
+          Image.asset(
+            'assets/gif/search_animation.gif',
+          ),
         ],
       ),
       bottomNavigationBar: CustomTabBox(),

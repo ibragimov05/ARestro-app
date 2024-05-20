@@ -40,7 +40,10 @@ class _SignupPageState extends State<SignupPage> {
   String userPhoneNumberErrorMessage = '';
 
   String userPasswordErrorMessage = '';
-
+  @override
+  void dispose() {
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

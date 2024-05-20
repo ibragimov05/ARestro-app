@@ -30,7 +30,7 @@ class RestaurantDetails extends StatelessWidget {
       backgroundColor: AppColors.appBackgroundColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
-        child: CustomAppBar(),
+        child: CustomAppBar(isSelected: false),
       ),
       body: ListView(
         physics: BouncingScrollPhysics(),
@@ -192,6 +192,7 @@ class RestaurantDetails extends StatelessWidget {
           70.height(),
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: CustomFloatingActionButton(
         buttonText: 'View Available Tables',
         onTap: () {

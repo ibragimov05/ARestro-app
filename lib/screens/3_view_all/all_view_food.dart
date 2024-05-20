@@ -26,7 +26,7 @@ class AllViewFoodPage extends StatelessWidget {
       /// appbar
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
-        child: CustomAppBar(),
+        child: CustomAppBar(isSelected: false),
       ),
       body: ListView(
         physics: BouncingScrollPhysics(),

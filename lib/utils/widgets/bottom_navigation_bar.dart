@@ -1,4 +1,5 @@
 import 'package:arestro_app/generated/assets.dart';
+import 'package:arestro_app/models/tab_bar_model.dart';
 import 'package:arestro_app/screens/2_dashboard/dashboard.dart';
 import 'package:arestro_app/screens/5_food_order/cart_page.dart';
 import 'package:arestro_app/screens/7_search_page/search_page.dart';
@@ -38,24 +39,30 @@ class _CustomTabBoxState extends State<CustomTabBox> {
   ];
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: 70.h,
       padding: EdgeInsets.only(left: 45.w, right: 45.w, top: 15.h),
-      color: AppColors.mainTextColorWhite,
+      color: tabBoxData[1].isTrue
+          ? AppColors.appBackgroundColor
+          : AppColors.mainTextColorWhite,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           customButtonMaker(
             iconPath: tabBoxButtonData[0]['iconPath'],
             iconName: tabBoxButtonData[0]['iconName'],
-            isSelected: tabBoxButtonData[0]['isSelected'],
+            isSelected: tabBoxData[0].isTrue,
             onTap: () {
               setState(() {
-                tabBoxButtonData[0]['isSelected'] = true;
-                tabBoxButtonData[1]['isSelected'] = false;
-                tabBoxButtonData[2]['isSelected'] = false;
+                tabBoxData[0].isTrue = true;
+                tabBoxData[1].isTrue = false;
               });
 
               Navigator.pushReplacement(
@@ -71,12 +78,11 @@ class _CustomTabBoxState extends State<CustomTabBox> {
           customButtonMaker(
             iconPath: tabBoxButtonData[1]['iconPath'],
             iconName: tabBoxButtonData[1]['iconName'],
-            isSelected: tabBoxButtonData[1]['isSelected'],
+            isSelected: tabBoxData[1].isTrue,
             onTap: () {
               setState(() {
-                tabBoxButtonData[0]['isSelected'] = false;
-                tabBoxButtonData[1]['isSelected'] = true;
-                tabBoxButtonData[2]['isSelected'] = false;
+                tabBoxData[0].isTrue = false;
+                tabBoxData[1].isTrue = true;
               });
 
               Navigator.pushReplacement(
@@ -92,14 +98,8 @@ class _CustomTabBoxState extends State<CustomTabBox> {
           customButtonMaker(
             iconPath: tabBoxButtonData[2]['iconPath'],
             iconName: tabBoxButtonData[2]['iconName'],
-            isSelected: tabBoxButtonData[2]['isSelected'],
+            isSelected: false,
             onTap: () {
-              setState(() {
-                tabBoxButtonData[0]['isSelected'] = false;
-                tabBoxButtonData[1]['isSelected'] = false;
-                tabBoxButtonData[2]['isSelected'] = true;
-              });
-
               Navigator.pushReplacement(
                 context,
                 CupertinoPageRoute(

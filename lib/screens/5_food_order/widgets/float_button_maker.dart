@@ -6,35 +6,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
-class CustomFloatingActionButton extends StatelessWidget {
+class CustomFloatButton extends StatelessWidget {
   final String buttonText;
-  final Function() onTap;
+  final Function() onTapFunction;
+  final bool isSelected;
 
-  const CustomFloatingActionButton({
+  const CustomFloatButton({
     super.key,
     required this.buttonText,
-    required this.onTap,
+    required this.onTapFunction,
+    required this.isSelected,
   });
 
   @override
   Widget build(BuildContext context) {
     return ZoomTapAnimation(
-      onTap: onTap,
+      onTap: onTapFunction,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 38.w),
-        width: double.infinity,
-        height: 50.h,
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
         decoration: BoxDecoration(
-          color: AppColors.mainGreenColor,
-          borderRadius: BorderRadius.circular(5.r),
+          color: isSelected ? AppColors.darkGreen : Colors.white,
+          borderRadius: BorderRadius.circular(8.r),
         ),
         child: Center(
           child: Text(
             buttonText,
             style: defaultTextStyle.copyWith(
-              fontWeight: FontWeight.w700,
-              fontSize: 16.sp,
-              color: Colors.white,
+              fontWeight: FontWeight.w800,
+              fontSize: 17.sp,
+              color: isSelected ? AppColors.mainTextColorWhite : AppColors.darkGreen,
             ),
           ),
         ),

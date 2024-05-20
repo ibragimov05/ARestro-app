@@ -10,6 +10,9 @@ class Assets {
   static const String iconStarUnSelected =
       'assets/icons/food_order_icons/star/unselected_star.svg';
   static const String iconCart = 'assets/icons/food_order_icons/cart.svg';
+  static const String iconMinus = 'assets/icons/food_order_icons/minus.svg';
+  static const String iconPlus = 'assets/icons/food_order_icons/plus.svg';
+
 
   /// main_icons
   static const String iconFire = 'assets/icons/main_icons/fire.png';

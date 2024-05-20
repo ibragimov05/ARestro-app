@@ -19,7 +19,7 @@ class CustomFoodRow extends StatelessWidget {
   final int index;
   final bool isSearch;
 
-  CustomFoodRow({
+  const CustomFoodRow({
     super.key,
     required this.foodImage,
     required this.foodName,
@@ -47,50 +47,48 @@ class CustomFoodRow extends StatelessWidget {
         );
       },
       child: Container(
-        width: isSearch ? double.infinity : 151.w,
+        width: 151.w,
         clipBehavior: Clip.hardEdge,
+        padding: isSearch ? EdgeInsets.all(5.sp) : null,
         margin: isSearch
-            ? EdgeInsets.only(bottom: 0.h, top: 20.h)
+            ? EdgeInsets.only(left: 8.sp, right: 8.sp, top: 10.h)
             : EdgeInsets.only(left: index == 0 ? 30.w : 11.w, right: 11),
         decoration: BoxDecoration(
           color: isSearch ? AppColors.appBackgroundColor : Color(0xFFFFFFFF),
           // color: Colors.yellow,
           borderRadius: BorderRadius.circular(18.r),
         ),
-        child: Column(
-          crossAxisAlignment:
-              isSearch ? CrossAxisAlignment.center : CrossAxisAlignment.start,
-          children: [
-            Image.asset(
-              foodImage,
-              width: 151.w,
-              height: isSearch ? 150.h : 132.h,
-              fit: BoxFit.cover,
-              alignment: Alignment.topCenter,
-            ),
-            11.height(),
-            Padding(
-              padding: EdgeInsets.only(
-                left: 15.w,
-                bottom: 24.h,
-              ),
-              child: Column(
+        child: isSearch
+            ? Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    foodName,
-                    style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18.sp,
-                      color: AppColors.textColorBlack,
-                    ),
+                  Image.asset(
+                    foodImage,
+                    width: 100.w,
+                    height: 90.h,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.topCenter,
                   ),
-                  11.height(),
-                  SizedBox(
-                    width: 110.w,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  11.width(),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 15.w,
+                      bottom: 24.h,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        20.height(),
+                        Text(
+                          foodName,
+                          style: GoogleFonts.inter(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18.sp,
+                            color: AppColors.textColorBlack,
+                          ),
+                        ),
+                        11.height(),
                         Text(
                           'Rs. $foodPrice',
                           style: GoogleFonts.inter(
@@ -99,15 +97,61 @@ class CustomFoodRow extends StatelessWidget {
                             color: Color(0xFF000000).withOpacity(0.5),
                           ),
                         ),
-                        // 10.width(),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    foodImage,
+                    width: 151.w,
+                    height: 132.h,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.topCenter,
+                  ),
+                  11.height(),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 15.w,
+                      bottom: 24.h,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          foodName,
+                          style: GoogleFonts.inter(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18.sp,
+                            color: AppColors.textColorBlack,
+                          ),
+                        ),
+                        11.height(),
+                        SizedBox(
+                          width: 110.w,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Rs. $foodPrice',
+                                style: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16.sp,
+                                  color: Color(0xFF000000).withOpacity(0.5),
+                                ),
+                              ),
+                              // 10.width(),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ],
               ),
-            ),
-          ],
-        ),
       ),
     );
   }

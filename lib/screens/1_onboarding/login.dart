@@ -191,7 +191,7 @@ class _LoginPageState extends State<LoginPage> {
                   if (isUserFound && isPasswordTrue) {
                     emailErrorMessage = '';
                     passwordErrorMessage = '';
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       CupertinoPageRoute(
                         builder: (context) {
